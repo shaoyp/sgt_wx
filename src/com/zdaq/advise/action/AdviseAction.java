@@ -20,58 +20,18 @@ public class AdviseAction extends BaseAction{
 	private String openid;
 	private Map<String,Object> map = new HashMap<String,Object>();  //接收参数
 	private AdviseService service = new AdviseService();
-	/**
-	 * 插入意见建议信息
-	 * 
-	 * */
+	public String show(){
+		//获取openid
+		openid = WeixinUtil.getOpenId(request, response);
+		return "show";
+	}
 	public String insertAdvise(){
-			System.out.println("---------------advise action:"+advise+",openid:"+openid);
-			logger.info("---------------advise action:"+advise+",openid:"+openid);
 			map.put("advise", advise);
-			//service.insert(map);
-			//---------------------------测试客服接口-------------------------
-			int code = sendMessage(openid);
-			System.out.println("code:"+code);
-			logger.info("code:"+code);
-			
-			//---------------------------The End--------------------------
-		return "success";
+			map.put("openid", openid);
+			service.insert(map);
+		return "insertAdvise";
 	}
-	private static String send_url = "https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token=ACCESS_TOKEN";
-	private int sendMessage(String openid){
-		// 第三方用户唯一凭证
-		String appId = WeiXinConstant.APPID;
-		// 第三方用户唯一凭证密钥
-		String appSecret = WeiXinConstant.APPSECRET;
-		// 调用接口获取access_token
-		AccessToken at = WeixinUtil.getAccessToken(appId, appSecret);
-		
-		
-		int result = 0;
-		// 拼装创建客服的url
-		String url = send_url.replace("ACCESS_TOKEN", at.getToken());
-		// 将客服对象转换成json字符串
-		//String jsonKefu = JSONObject.fromObject(kf).toString();
-		String jsonSend = "{\"touser\":\""+openid+"\",\"msgtype\":\"text\",\"text\":{\"content\":\"您好，有什么可以帮助你的？\"}}";
-		// 调用接口创建菜单
-		JSONObject jsonObject = WeixinUtil.httpRequest(url, "POST", jsonSend);
-		System.out.println("json:" + jsonObject);
-		logger.info("json:" + jsonObject);
-		if (null != jsonObject) {
-			if (0 != jsonObject.getInt("errcode")) {
-				result = jsonObject.getInt("errcode");
-				System.out.println("发送微信消息失败 errcode:{} errmsg:{}"
-						+ jsonObject.getInt("errcode")
-						+ jsonObject.getString("errmsg"));
-				logger.info("发送微信消息失败 errcode:{} errmsg:{}"
-						+ jsonObject.getInt("errcode")
-						+ jsonObject.getString("errmsg"));
-			}
-		}
 
-		return result;
-	}
-	
 	
 	public String getAdvise() {
 		return advise;

@@ -8,13 +8,14 @@ import java.io.Serializable;
  * */
 public class Advise implements Serializable{
 	private static final long serialVersionUID = -494550649103841127L;
-	private String id; //建议id
+	private int id; //建议id
 	private String user_id; //用户id
 	private String advise; //建议内容
-	public String getId() {
+	
+	public int getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getUser_id() {

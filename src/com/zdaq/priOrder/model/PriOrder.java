@@ -7,13 +7,14 @@ import java.io.Serializable;
  * */
 public class PriOrder implements Serializable{
 	private static final long serialVersionUID = -5613634607292636146L;
-	private String id; //定制id
+	private int id; //定制id
 	private String user_id; //用户id
-	private String order ; //建议内容
-	public String getId() {
+	private String order ; //定制内容
+	
+	public int getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getUser_id() {

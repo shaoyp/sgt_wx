@@ -6,13 +6,29 @@
 	    <!-- 微信入口 -->
 	    <action name="fastWx" class="com.zdaq.fastWx.action.MainAction" method="execute">
 	    </action>
-	    <!-- 意见建议 -->
-	    <action name="advise" class="com.zdaq.advise.action.AdviseAction" method="insertAdvise">
-	        <result>ok.html</result>
+
+	    <!-- 团购信息显示 -->
+	    <action name="group" class="com.zdaq.group.action.GroupAction" method="show">
+	        <result name="show">groupView.jsp</result>
 	    </action>
-	    <!-- 团购 -->
-	    <action name="group" class="com.zdaq.group.action.GroupAction" method="execute">
-	        <result>groupView.jsp</result>
+	   	<!-- 团购订单 -->
+	   	<action name="groupOrder" class="com.zdaq.group.action.GroupAction" method="order">
+	        <result name="order">kefu.html</result>
+	    </action>
+	   	<!-- 私人定制显示 -->
+	   	<action name="priorder" class="com.zdaq.priOrder.action.PriOrderAction" method="show">
+	        <result name="show">privateView.jsp</result>
+	    </action>
+	    <!-- 私人订单 -->
+	   	<action name="priorderOrder" class="com.zdaq.priOrder.action.PriOrderAction" method="order">
+	        <result name="order">kefu.html</result>
+	    </action>
+	   	<!-- 意见建议 -->
+	    <action name="advise" class="com.zdaq.advise.action.AdviseAction" method="show">
+	        <result name="show">adviseView.jsp</result>
+	    </action>
+	    <action name="insertAdvise" class="com.zdaq.advise.action.AdviseAction" method="insertAdvise">
+	        <result name="insertAdvise">ok.html</result>
 	    </action>
 	</package>
 </struts>

@@ -15,6 +15,7 @@ public class AdviseDao {
 	private ResultSet rs = null;
 	public int insert(Map<String,Object> map){
 		String advise = (String) map.get("advise");
+		String openid = (String) map.get("openid");
 		int count = 0;
 		try {
 
@@ -27,7 +28,7 @@ public class AdviseDao {
 				"              advise" +
 				"       )VALUES(?,?)";
 		stmt = conn.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
-		stmt.setInt(1, 12345);
+		stmt.setString(1, openid);
 		stmt.setString(2, advise);
 		count = stmt.executeUpdate();
 		rs= stmt.getGeneratedKeys();

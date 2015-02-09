@@ -14,7 +14,8 @@ public class PriOrderDao {
 	private PreparedStatement stmt = null;
 	private ResultSet rs = null;
 	public int insert(Map<String,Object> map){
-		String order = (String) map.get("order");
+		String openid = (String) map.get("openid");
+		String priContent = (String) map.get("priContent");
 		int count = 0;
 		try {
 
@@ -22,13 +23,13 @@ public class PriOrderDao {
 				conn = DBUtils.getConnection();
 			}
 		String sql ="INSERT INTO " +
-				"          fast_advise " +
+				"          fast_private_order " +
 				"             (user_id," +
-				"              advise" +
+				"              odrder" +
 				"       )VALUES(?,?)";
 		stmt = conn.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
-		stmt.setInt(1, 12345);
-		stmt.setString(2, order);
+		stmt.setString(1, openid);
+		stmt.setString(2, priContent);
 		count = stmt.executeUpdate();
 		rs= stmt.getGeneratedKeys();
 		if (rs != null&&rs.next()) {  

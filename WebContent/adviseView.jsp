@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +22,7 @@
 	 		<font class="font_orange_title">意见建议</font>
 	 	</div>
 	 	<div class="advise_content">
-	 	openid:<input  name="openid"><br/>
+	 	<input name="openid" type="text" value="<s:property value="openid"/>">
 	 	<textarea class="font_textarea_content" id="advise_textarea" name="advise" >点击输入您的意见和建议</textarea>
 	 	</div>
 	 	<div class="advise_submit" style="">

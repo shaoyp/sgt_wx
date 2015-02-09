@@ -72,7 +72,7 @@ public class WeixinUtil {
 	        "code=CODE&grant_type=authorization_code";
 	public static String getOpenId(HttpServletRequest request,HttpServletResponse response) {
 		Logger  logger = Logger.getLogger(WeixinUtil.class);
-		logger.info("----------------进去网页授权-------------------------");
+		logger.info("----------------获取网页授权-------------------------");
 		String openid = "";
 		//发送请求
 		try {
@@ -99,6 +99,48 @@ public class WeixinUtil {
 			logger.info(e);
 		}
 		return openid;
+	}
+	/**
+	 * 发送消息
+	 * 
+	 * @param appid 凭证
+	 * @param appsecret 密钥
+	 * @return
+	 */
+	private static String send_hello_url = "https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token=ACCESS_TOKEN";
+	public static  int sendMessage(String openid){
+		Logger  logger = Logger.getLogger(WeixinUtil.class);
+		logger.info("----------------发送你好-------------------------");
+		// 第三方用户唯一凭证
+		String appId = WeiXinConstant.APPID;
+		// 第三方用户唯一凭证密钥
+		String appSecret = WeiXinConstant.APPSECRET;
+		// 调用接口获取access_token
+		AccessToken at = WeixinUtil.getAccessToken(appId, appSecret);
+		
+		
+		int result = 0;
+		// 拼装创建客服的url
+		String url = send_hello_url.replace("ACCESS_TOKEN", at.getToken());
+		// 将客服对象转换成json字符串
+		//String jsonKefu = JSONObject.fromObject(kf).toString();
+		String jsonSend = "{\"touser\":\""+openid+"\",\"msgtype\":\"text\",\"text\":{\"content\":\"您好，有什么可以帮助你的？\"}}";
+		// 调用接口创建菜单
+		JSONObject jsonObject = WeixinUtil.httpRequest(url, "POST", jsonSend);
+		System.out.println("json:" + jsonObject);
+		if (null != jsonObject) {
+			if (0 != jsonObject.getInt("errcode")) {
+				result = jsonObject.getInt("errcode");
+				System.out.println("发送微信消息失败 errcode:{} errmsg:{}"
+						+ jsonObject.getInt("errcode")
+						+ jsonObject.getString("errmsg"));
+				logger.info("发送微信消息失败 errcode:{} errmsg:{}"
+						+ jsonObject.getInt("errcode")
+						+ jsonObject.getString("errmsg"));
+			}
+		}
+
+		return result;
 	}
 	
 	/**
