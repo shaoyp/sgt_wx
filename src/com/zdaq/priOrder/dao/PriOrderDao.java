@@ -1,4 +1,4 @@
-package com.zdaq.group.dao;
+package com.zdaq.priOrder.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,12 +9,12 @@ import java.util.Map;
 
 import com.zdaq.utils.DBUtils;
 
-public class GroupDao {
+public class PriOrderDao {
 	private Connection conn = null;
 	private PreparedStatement stmt = null;
 	private ResultSet rs = null;
 	public int insert(Map<String,Object> map){
-		String advise = (String) map.get("advise");
+		String order = (String) map.get("order");
 		int count = 0;
 		try {
 
@@ -28,7 +28,7 @@ public class GroupDao {
 				"       )VALUES(?,?)";
 		stmt = conn.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
 		stmt.setInt(1, 12345);
-		stmt.setString(2, advise);
+		stmt.setString(2, order);
 		count = stmt.executeUpdate();
 		rs= stmt.getGeneratedKeys();
 		if (rs != null&&rs.next()) {  

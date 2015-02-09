@@ -12,6 +12,10 @@ import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLSocketFactory;
 import javax.net.ssl.TrustManager;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.log4j.Logger;
 
 import net.sf.json.JSONException;
 import net.sf.json.JSONObject;
@@ -54,6 +58,47 @@ public class WeixinUtil {
 			}
 		}
 		return accessToken;
+	}
+	/**
+	 * 获取网页授权open_id
+	 * 
+	 * @param appid 凭证
+	 * @param appsecret 密钥
+	 * @return
+	 */
+	private static String  get_access_token_url="https://api.weixin.qq.com/sns/oauth2/access_token?" +
+	        "appid=APPID" +
+	        "&secret=SECRET&" +
+	        "code=CODE&grant_type=authorization_code";
+	public static String getOpenId(HttpServletRequest request,HttpServletResponse response) {
+		Logger  logger = Logger.getLogger(WeixinUtil.class);
+		logger.info("----------------进去网页授权-------------------------");
+		String openid = "";
+		//发送请求
+		try {
+			request.setCharacterEncoding("UTF-8");
+			response.setCharacterEncoding("UTF-8");
+			String code = request.getParameter("code");
+			logger.info("获取code：" + code);
+			//配置URL
+			get_access_token_url = get_access_token_url.replace("APPID", WeiXinConstant.APPID);
+			get_access_token_url = get_access_token_url.replace("SECRET", WeiXinConstant.APPSECRET);
+			get_access_token_url = get_access_token_url.replace("CODE", code);
+			JSONObject jsonObject = WeixinUtil.httpRequest(get_access_token_url, "GET", null);
+			openid = jsonObject.getString("openid");
+			if (null != jsonObject) {
+				if (0 != jsonObject.getInt("errcode")) {
+					jsonObject.getInt("errcode");
+					logger.info("创建菜单失败 errcode:{} errmsg:{}"
+							+ jsonObject.getInt("errcode")
+						+ jsonObject.getString("errmsg"));
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			logger.info(e);
+		}
+		return openid;
 	}
 	
 	/**

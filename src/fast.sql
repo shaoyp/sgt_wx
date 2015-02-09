@@ -9,7 +9,10 @@ create table fast_user(id int primary key NOT NULL AUTO_INCREMENT,
 create table fast_advise(id int primary key NOT NULL AUTO_INCREMENT,
                          user_id int,
                          advise varchar(300));
-create table fast_group_buying(id int primary key NOT NULL AUTO_INCREMENT,
+create table fast_private_order(id int primary key NOT NULL AUTO_INCREMENT,
+		                         user_id int,
+		                         odrder varchar(300));
+create table fast_group_info(id int primary key NOT NULL AUTO_INCREMENT,
                                name varchar(20),
                                price double,
                                discount_price double,
@@ -18,3 +21,7 @@ create table fast_group_buying(id int primary key NOT NULL AUTO_INCREMENT,
                                dead_line datetime,
                                img varchar(100),
                                del_flg char(1));
+create table fast_group_order(id int primary key NOT NULL AUTO_INCREMENT,
+		                         user_id int,
+		                         num int,
+		                         price double);
