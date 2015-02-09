@@ -1,0 +1,35 @@
+a {
+  outline: none;
+}
+a:FOCUS {
+  outline: none;
+}
+.container {
+  padding: 0;
+  height: 100%;
+}
+span,
+p {
+  font-family: "Microsoft YaHei";
+}
+.ur_content .ur_title {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.ur_content .ur_title span {
+  color: #838383;
+  font-size: 18px;
+}
+.ur_content .ur_media {
+  width: 100%;
+  height: auto;
+  float: left;
+  min-height: 1px;
+}
+.ur_content .ur_cont {
+  padding: 15px 15px;
+}
+.ur_content .ur_cont span {
+  color: #838383;
+  font-size: 17px;
+}

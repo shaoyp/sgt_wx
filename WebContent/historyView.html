@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>历史消息</title>
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<!-- <link rel="stylesheet/less" type="text/css" href="less/historyView.less">
+<link rel="stylesheet/less" type="text/css" href="less/main.less"> -->
+<link href="css/historyView.css" rel="stylesheet">
+<link href="css/main.css" rel="stylesheet"> 
+</head>
+<body>
+	 <div class="history_div " >
+	 	<div class="history_title">
+	 		<font class="font_orange_title">历史消息</font>
+	 	</div>
+	 	<div class="history_content left" style="">
+	 		<div class="history_left left history_hide">
+	 			1.21321313213131231231231231231312312313
+	 		</div>
+	 		<div class="history_right right"><img alt="" src="images/common/right.png"></div>
+	 		
+	 	</div>
+	 	<div class="history_content left">
+	 		<div class="history_left left history_hide">
+	 			1.21321313213131231231231231231312312313
+	 		</div>
+	 		<div class="history_right right"><img alt="" src="images/common/right.png"></div>
+	 	</div>
+	 	<div class="history_content left">
+	 		<div class="history_left left history_hide">
+	 			1.21321313213131231231231231231312312313
+	 		</div>
+	 		<div class="history_right right"><img alt="" src="images/common/right.png"></div>
+	 	</div>
+	 		
+	 </div>
+	<script src="js/jquery.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="js/less.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		$(function(){
+ 	 		$(".history_content").toggle(function(){
+	 	 			$(this).children().siblings(".history_right").children("img").attr("src","images/common/down.png");
+	 	 			$(this).children().siblings(".history_left").removeClass("history_hide").addClass("history_show");
+			},function(){
+					$(this).children().siblings(".history_right").children("img").attr("src","images/common/right.png");
+					$(this).children().siblings(".history_left").removeClass("history_show").addClass("history_hide");
+			}); 
+
+		});
+	</script>
+</body>
+</html>

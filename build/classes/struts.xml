@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.multipart.maxSize" value="2000000"/>
+	<package name="fastWeixin" namespace="/" extends="json-default">
+	    <!-- 微信入口 -->
+	    <action name="fastWx" class="com.zdaq.fastWx.action.MainAction" method="execute">
+	    </action>
+	    <!-- 意见建议 -->
+	    <action name="advise" class="com.zdaq.advise.action.AdviseAction" method="insertAdvise">
+	        <result>ok.jsp</result>
+	    </action>
+	    <!-- 团购 -->
+	    <action name="group" class="com.zdaq.group.action.GroupAction" method="execute">
+	        <result>groupView.jsp</result>
+	    </action>
+	</package>
+</struts>

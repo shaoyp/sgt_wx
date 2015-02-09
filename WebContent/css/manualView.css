@@ -1,0 +1,59 @@
+.manual＿div {
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+  width: 100%;
+}
+.manual＿div div.manual_download {
+  text-align: right;
+  text-decoration: underline;
+  color: #3fb045;
+  margin-right: 20px;
+}
+.manual＿div .manual_machine {
+  overflow: hidden;
+  position: relative;
+  margin-top: 20px;
+}
+.manual＿div .manual_machine .manual_window {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+.manual＿div .manual_machine .manual_window .manual_windw_pic {
+  float: left;
+}
+.manual＿div .manual_prev {
+  position: absolute;
+  top: 40%;
+  left: 0;
+  width: 15px;
+}
+.manual＿div .manual_next {
+  position: absolute;
+  top: 40%;
+  right: 0;
+  width: 15px;
+}
+.manual＿div .manual_content {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.manual＿div .manual_content .manual_num {
+  width: 25px;
+  height: 25px;
+}
+.manual＿div .manual_content .manual_font {
+  width: 75%;
+  height: 80px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+.manual_prev:hover,
+.manual_next:hover {
+  cursor: pointer;
+}
+.manual_download a:hover {
+  cursor: pointer;
+  color: #3fb045;
+}

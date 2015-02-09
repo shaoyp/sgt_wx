@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=0">
+<title>360°展示</title>
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<!-- <link rel="stylesheet/less" type="text/css" href="less/prodView.less"> -->
+<link href="css/prodView.css" rel="stylesheet">
+<link href="css/rotate.css" rel="stylesheet">
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<ul class="nav nav-tabs">
+					<li class="active"><a href="360view.html" >360°展示</a></li>
+					<li><a href="outerProcess.html" >外部工艺</a></li>
+					<li><a href="installStyle.html" >安装流程</a></li>
+					<li><a href="netSolution.html" >网络解决方案</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="row cont_360">
+			<img src="images/360back.png" class="back_360 img-responsive">
+			<div class="col-xs-12 prod360">
+				<div id="threesixty" image_count='40' path_pattern='images/360/prod#index#.jpg' end_frame='77' scale='20' >
+				    <em class="loading"><p>0%</p></em>
+				    <ol></ol>
+				</div>
+			</div>
+			<div class="col-xs-12">
+				<div class="font_title_360">
+					<span class="title1_360" >8</span><span class="title2_360" >寸(4:3)</span><br/><br/>
+					<span class="title3_360" >全屏触摸显示</span>
+				</div>
+				<div class="font_cont_360">
+					<br/>
+					<p class="cont_360" >酒精检测(电化学警用酒精传感器)<br/>
+						睡眠情绪检测(HRV检测算法)<br/>
+						快速反应时(快速反应检测算法)</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/jquery.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/threesixty.min.js"></script>
+	<!-- <script src="js/less.js" type="text/javascript"></script> -->
+</body>
+</html>

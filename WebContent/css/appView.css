@@ -1,0 +1,82 @@
+.app_div {
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+  width: 100%;
+}
+.app_div div.app_download {
+  text-align: right;
+  text-decoration: underline;
+  color: #3fb045;
+  margin-right: 20px;
+}
+.app_div div.app_content {
+  margin-top: 20px;
+}
+.app_div div.app_content p {
+  width: 70%;
+  margin: 0 auto;
+}
+.app_div div.app_content .app_hr {
+  margin: 5px auto 0px auto;
+  width: 90%;
+  border: 0;
+  background-color: #3fb045;
+  height: 1px;
+}
+.app_div div.app_content .app_span {
+  margin: 0 auto;
+  color: #3fb045;
+  text-align: center;
+}
+.app_div .app_img {
+  width: 100%;
+}
+.app_content1,
+.app_content2,
+.app_content3,
+.app_content4,
+.app_content5 {
+  position: absolute;
+}
+.app_download a:hover {
+  cursor: pointer;
+  color: #3fb045;
+}
+.app_content1 {
+  bottom: 0%;
+  right: 0%;
+  height: 23%;
+  width: 50%;
+}
+.app_content1 p {
+  margin-left: 8%;
+}
+.app_content2 {
+  top: 15%;
+  left: 5%;
+  width: 50%;
+}
+.app_content3 {
+  top: 25%;
+  right: 0%;
+  height: 23%;
+  width: 50%;
+}
+.app_content3 p {
+  margin-left: 8%;
+}
+.app_content4 {
+  bottom: 20%;
+  left: 5%;
+  width: 50%;
+}
+.app_content5 {
+  bottom: 10%;
+  right: 0%;
+  height: 23%;
+  width: 45%;
+}
+.app_content5 p {
+  margin-left: 8%;
+}

@@ -1,0 +1,28 @@
+.advise_div {
+  width: 100%;
+}
+.advise_div .advise_title {
+  margin: 10px 10px 10px 10px;
+  width: 90%;
+}
+.advise_div .advise_content {
+  width: 95%;
+  height: 60%;
+  margin: 0 auto;
+}
+.advise_div .advise_content textarea {
+  border: 1px solid #797979;
+  padding: 5px;
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 300px;
+}
+.advise_div .advise_submit {
+  width: 95%;
+  height: 20%;
+  margin: 10px auto 0px auto;
+}
+.advise_img {
+  width: 100px;
+  cursor: pointer;
+}
