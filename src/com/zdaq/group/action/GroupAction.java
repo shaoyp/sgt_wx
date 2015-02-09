@@ -1,6 +1,9 @@
 package com.zdaq.group.action;
 
 import java.io.PrintWriter;
+import java.net.URL;
+
+import javax.net.ssl.HttpsURLConnection;
 
 import org.apache.log4j.Logger;
 
@@ -38,7 +41,9 @@ public class GroupAction extends BaseAction{
 	        get_access_token_url=get_access_token_url.replace("SECRET", WeiXinConstant.APPSECRET);
 	        get_access_token_url=get_access_token_url.replace("CODE", code);
 	        //发送请求
-	        JSONObject jsonObject = WeixinUtil.httpRequest(get_access_token_url, "POST", null);
+	        logger.info("URL:"+get_access_token_url);
+	        JSONObject jsonObject = WeixinUtil.httpRequest(get_access_token_url, "GET", null);
+	        logger.info("jsonObject：" + jsonObject);
 	        access_token = jsonObject.getString("access_token");
 	        openid = jsonObject.getString("openid");
 	        System.out.println("获取openid：" + openid + ",token:" + access_token + ",json:" + jsonObject);
@@ -57,6 +62,7 @@ public class GroupAction extends BaseAction{
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
+			logger.info(e);
 		}
 		return "success";
 	}

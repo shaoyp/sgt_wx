@@ -6,7 +6,7 @@ public class WeiXinConstant {
 	// 第三方用户唯一凭证
 	public final static String APPID = "wx02ecb0be0929ec20";
 	// 第三方用户唯一凭证密钥
-	public final static String APPSECRET = "d84080996697679c4dbb3f9e33d12950 ";
+	public final static String APPSECRET = "d84080996697679c4dbb3f9e33d12950";
 	// 微信公众号
 	public final static String WINXINNUM = "zdaq001";
 	/**
@@ -38,7 +38,7 @@ public class WeiXinConstant {
 	public final static String MENU_TYPE = "click";
 	public final static String MENU_TYPE_VIEW = "view";
 	//----------------------------------------------------------------
-	public final static String PROJECT_NAME = "www.z-aq.com/sgt_wx/";
+	public final static String PROJECT_NAME = "http://www.z-aq.com/sgt_wx/";
 	//第一个一级菜单  名字
 	public final static String MENU1_PARENT_NAME = "上岗通";
 	// 第一个一级菜单 第一个子菜单 名字
@@ -138,7 +138,7 @@ public class WeiXinConstant {
 	// 第三个一级菜单 第四个子编码 名字
 	public final static String MENU3_CHILDREN4_KEY = "34";
 	// 第三个一级菜单 第四个子菜单 URL
-	public final static String MENU3_CHILDREN4_URL = "historyView.html";
+	public final static String MENU3_CHILDREN4_URL = PROJECT_NAME + "historyView.html";
 /*	// 第三个一级菜单 第五个子菜单 名字
 	public final static String MENU3_CHILDREN5_NAME = "联系我们";
 	// 第三个一级菜单 第五个子编码 名字

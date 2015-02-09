@@ -8,7 +8,7 @@
 	    </action>
 	    <!-- 意见建议 -->
 	    <action name="advise" class="com.zdaq.advise.action.AdviseAction" method="insertAdvise">
-	        <result>ok.jsp</result>
+	        <result>ok.html</result>
 	    </action>
 	    <!-- 团购 -->
 	    <action name="group" class="com.zdaq.group.action.GroupAction" method="execute">
