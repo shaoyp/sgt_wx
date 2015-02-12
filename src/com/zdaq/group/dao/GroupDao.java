@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
 import java.util.Map;
 
 import com.zdaq.group.model.Group;
@@ -41,23 +42,24 @@ public class GroupDao {
 				group.setDiscount_private(rs.getDouble("discount_price"));
 				group.setPeople_num(rs.getInt("people_num"));
 				group.setNum(rs.getInt("num"));
-				group.setDead_line(rs.getDate("dead_line"));
+				SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+				group.setDead_line(sdf.format(rs.getTimestamp("dead_line")));//转格式
 				group.setImg(rs.getString("img"));
 				group.setDel_flg(rs.getString("del_flg"));
 				
 			}
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			DBUtils.close(stmt, rs);
+			DBUtils.close(conn,stmt, rs);
 		}
 
 		return group;
 	}
 	public int insert(Map<String,Object> map){
 		String openid = (String) map.get("openid");
-		int num =  (int) map.get("num");
-		double price =  (double) map.get("price");
+		int num =  Integer.parseInt((String) map.get("num")) ;
+		double price =  Double.parseDouble( (String) map.get("price"));
 		int count = 0;
 		try {
 
@@ -68,8 +70,9 @@ public class GroupDao {
 				"          fast_group_order " +
 				"              (user_id," +
 				"               num," +
-				"               price" +
-				"              )VALUES(?,?,?,?)";
+				"               price," +
+				"               order_date" +
+				"              )VALUES(?,?,?,now())";
 		stmt = conn.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
 		stmt.setString(1, openid);
 		stmt.setInt(2, num);
@@ -82,7 +85,7 @@ public class GroupDao {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			DBUtils.close(stmt, rs);
+			DBUtils.close(conn,stmt, rs);
 		}
 		return count;
 	}

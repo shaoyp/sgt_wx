@@ -1,6 +1,7 @@
 package com.zdaq.group.model;
 
 import java.io.Serializable;
+import java.util.Date;
 /**
  * 团购订单
  * 
@@ -11,7 +12,15 @@ public class GroupOrder implements Serializable{
 	private String user_id; // 用户id
 	private String nun; // 团购数量
 	private double price; // 团购价格
+	private Date order_date;
+	
 
+	public Date getOrder_date() {
+		return order_date;
+	}
+	public void setOrder_date(Date order_date) {
+		this.order_date = order_date;
+	}
 	public String getUser_id() {
 		return user_id;
 	}

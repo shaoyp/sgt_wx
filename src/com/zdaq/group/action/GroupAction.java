@@ -55,5 +55,23 @@ public class GroupAction extends BaseAction{
 	public void setGroup(Group group) {
 		this.group = group;
 	}
+	public GroupService getService() {
+		return service;
+	}
+	public void setService(GroupService service) {
+		this.service = service;
+	}
+	public String getNum() {
+		return num;
+	}
+	public void setNum(String num) {
+		this.num = num;
+	}
+	public String getPrice() {
+		return price;
+	}
+	public void setPrice(String price) {
+		this.price = price;
+	}
 	
 }

@@ -38,7 +38,7 @@ public class PriOrderDao {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			DBUtils.close(stmt, rs);
+			DBUtils.close(conn,stmt, rs);
 		}
 		return count;
 	}

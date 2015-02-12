@@ -14,7 +14,7 @@ public class Group implements Serializable{
 	private double discount_private; //折后价格
 	private int people_num; //团购人数
 	private int num; // 机器数量
-	private Date dead_line; //截止日期
+	private String dead_line; //截止日期
 	private String img; //图片地址
 	private String del_flg;
 	public int getId() {
@@ -53,10 +53,11 @@ public class Group implements Serializable{
 	public void setNum(int num) {
 		this.num = num;
 	}
-	public Date getDead_line() {
+	
+	public String getDead_line() {
 		return dead_line;
 	}
-	public void setDead_line(Date dead_line) {
+	public void setDead_line(String dead_line) {
 		this.dead_line = dead_line;
 	}
 	public String getImg() {

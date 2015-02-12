@@ -16,13 +16,13 @@
 
 </head>
 <body>
-	<form action="advise.action" method="post" id="advise_form">
+	<form action="insertAdvise.action" method="post" id="advise_form">
 	 <div class="advise_div " style="" >
 	 	<div class="advise_title">
 	 		<font class="font_orange_title">意见建议</font>
 	 	</div>
 	 	<div class="advise_content">
-	 	<input name="openid" type="text" value="<s:property value="openid"/>">
+	 	<input name="openid" type="hidden" value="<s:property value="openid"/>">
 	 	<textarea class="font_textarea_content" id="advise_textarea" name="advise" >点击输入您的意见和建议</textarea>
 	 	</div>
 	 	<div class="advise_submit" style="">

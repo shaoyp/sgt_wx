@@ -21,8 +21,8 @@
 	 		<font class="font_orange_title">私人定制</font>
 	 	</div>
 	 	<div class="private_content">
-	 	<input name="openid" type="text" value="<s:property value="openid"/>">
-	 	<textarea class="font_textarea_content" id="private_textarea" name="priContent" >请输入您的信息</textarea>
+	 	<input name="openid" type="hidden" value="<s:property value="openid"/>">
+	 	<textarea class="font_textarea_content" id="private_textarea" name="priContent" >请输入你的信息</textarea>
 	 	</div>
 	 	<div class="private_submit" style="">
 	 		<img class="private_img right" id="private_img" alt="" src="images/common/submit.jpg">
@@ -48,7 +48,7 @@
 			//获取焦点
 		   $("#private_textarea").focus(function cls() {
 		       var private_content = $(this).val();
-			   if (private_content == "请输入您的信息"){
+			   if (private_content == "请输入你的信息"){
 				   $(this).val("");
 			   } 
 		    });

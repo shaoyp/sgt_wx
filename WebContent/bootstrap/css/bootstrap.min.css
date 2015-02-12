@@ -3980,7 +3980,8 @@ textarea.input-group-sm>.form-control, textarea.input-group-sm>.input-group-addo
 
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus
 	{
-	color: #555;
+	/* color: #555; */
+	color: #3fb045;
 	cursor: default;
 	background-color: #fff;
 	border: 1px solid #ddd;
@@ -5536,7 +5537,8 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover,
 	border: 1px solid transparent;
 	border-radius: 4px;
 	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
-	box-shadow: 0 1px 1px rgba(0, 0, 0, .05)
+	box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+	border-top:none;
 }
 
 .panel-body {
@@ -5544,7 +5546,8 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover,
 }
 
 .panel-heading {
-	padding: 10px 15px;
+	/* padding: 10px 15px; */
+	padding: 15px 15px;
 	border-bottom: 1px solid transparent;
 	border-top-left-radius: 3px;
 	border-top-right-radius: 3px
@@ -5755,7 +5758,7 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover,
 }
 
 .panel-group .panel+.panel {
-	margin-top: 5px
+	/* margin-top: 5px */
 }
 
 .panel-group .panel-heading {
@@ -5781,12 +5784,13 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover,
 
 .panel-default>.panel-heading {
 	color: #333;
-	background-color: #f5f5f5;
+	/* background-color: #f5f5f5; */
 	border-color: #ddd
 }
 
 .panel-default>.panel-heading+.panel-collapse>.panel-body {
-	border-top-color: #ddd
+	border-top-color: #ddd;
+	background-color: #f5f5f5;
 }
 
 .panel-default>.panel-heading .badge {
