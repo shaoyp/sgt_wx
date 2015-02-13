@@ -1,5 +1,6 @@
 package com.zdaq.group.action;
 
+import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -29,6 +30,9 @@ public class GroupAction extends BaseAction{
 			openid = WeixinUtil.getOpenId(request,response);
 			//根据id获取团购信息
 			group = service.getGroup(1);
+			if(group.getDead_line() != null && !"".equals(group.getDead_line())){
+				group.setDead_line(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(group.getDead_line()).getTime()+"");
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 			logger.info(e);
@@ -39,8 +43,8 @@ public class GroupAction extends BaseAction{
 		map.put("openid", openid);
 		map.put("num", num);
 		map.put("price", price);
-		int count = service.insert(map);
-		int result = WeixinUtil.sendMessage(openid);
+		int result = service.insert(map);
+		int count = WeixinUtil.sendMessage(openid);
 		return "order";
 	} 
 	public String getOpenid() {

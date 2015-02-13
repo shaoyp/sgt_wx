@@ -86,6 +86,7 @@ public class WeixinUtil {
 			get_access_token_url = get_access_token_url.replace("CODE", code);
 			JSONObject jsonObject = WeixinUtil.httpRequest(get_access_token_url, "GET", null);
 			openid = jsonObject.getString("openid");
+			logger.info("openid:" + openid);
 			if (null != jsonObject) {
 				if (0 != jsonObject.getInt("errcode")) {
 					jsonObject.getInt("errcode");

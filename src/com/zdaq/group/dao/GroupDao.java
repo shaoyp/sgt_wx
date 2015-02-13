@@ -8,10 +8,13 @@ import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import java.util.Map;
 
+import org.apache.log4j.Logger;
+
 import com.zdaq.group.model.Group;
 import com.zdaq.utils.DBUtils;
 
 public class GroupDao {
+	Logger logger = Logger.getLogger(GroupDao.class);
 	private Connection conn = null;
 	private PreparedStatement stmt = null;
 	private ResultSet rs = null;
@@ -36,6 +39,7 @@ public class GroupDao {
 			stmt.setInt(1, id);
 			rs = stmt.executeQuery();
 			while (rs.next()) {
+				logger.info("数据库拿到团购信息：" + rs.getString("name"));
 				group.setId(rs.getInt("id"));
 				group.setName(rs.getString("name"));
 				group.setPrice(rs.getDouble("price"));

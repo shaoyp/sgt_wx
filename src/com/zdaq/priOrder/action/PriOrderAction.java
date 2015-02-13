@@ -28,8 +28,8 @@ public class PriOrderAction extends BaseAction{
 	public String order(){
 		map.put("priContent", priContent);
 		map.put("openid", openid);
-		int count = service.insert(map);
-		int result = WeixinUtil.sendMessage(openid);
+		int result = service.insert(map);
+		int count = WeixinUtil.sendMessage(openid);
 		return "order";
 	}
 	public String getPriContent() {

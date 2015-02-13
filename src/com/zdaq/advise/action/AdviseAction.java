@@ -5,12 +5,9 @@ import java.util.Map;
 
 import org.apache.log4j.Logger;
 
-import net.sf.json.JSONObject;
 
 import com.zdaq.advise.service.AdviseService;
 import com.zdaq.common.action.BaseAction;
-import com.zdaq.fastWx.util.AccessToken;
-import com.zdaq.fastWx.util.WeiXinConstant;
 import com.zdaq.fastWx.util.WeixinUtil;
 
 public class AdviseAction extends BaseAction{
@@ -28,7 +25,7 @@ public class AdviseAction extends BaseAction{
 	public String insertAdvise(){
 			map.put("advise", advise);
 			map.put("openid", openid);
-			service.insert(map);
+			int result = service.insert(map);
 		return "insertAdvise";
 	}
 

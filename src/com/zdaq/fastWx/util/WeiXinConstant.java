@@ -100,13 +100,13 @@ public class WeiXinConstant {
 	public final static String MENU2_CHILDREN3_KEY = "23";
 	// 第二个一级菜单 第三个子菜单 URL
 	//访问地址  http://www.z-aq.com/priorder.action
-	public final static String PRIORDER_URL = "http%3a%2f%2fwww.z-aq.com%2fpriorder.action";
+	public final static String PRIORDER_URL = "http%3a%2f%2fwww.z-aq.com%2fsgt_wx%2fpriorder.action";
 	public final static String MENU2_CHILDREN3_URL ="https://open.weixin.qq.com/connect/oauth2/authorize?"
 					+ "appid=" + APPID + "&"
 					+ "redirect_uri= " + PRIORDER_URL + "&"
 					+ "response_type=code&"
 					+ "scope=" + "snsapi_base" + "&"
-					+ "state=" + 123 + "#wechat_redirect";
+					+ "state=" + 234 + "#wechat_redirect";
 	
 	
 /*	// 第二个一级菜单 第四个子菜单 名字
@@ -143,13 +143,13 @@ public class WeiXinConstant {
 	// 第三个一级菜单 第三个子菜单 URL
 	//public final static String MENU3_CHILDREN3_URL = PROJECT_NAME + "adviseView.html";
 	//访问地址  http://www.z-aq.com/advise.action
-	public final static String ADVISE_URL = "http%3a%2f%2fwww.z-aq.com%2fadvise.action";
+	public final static String ADVISE_URL = "http%3a%2f%2fwww.z-aq.com%2fsgt_wx%2fadvise.action";
 	public final static String MENU3_CHILDREN3_URL ="https://open.weixin.qq.com/connect/oauth2/authorize?"
 					+ "appid=" + APPID + "&"
 					+ "redirect_uri= " + ADVISE_URL + "&"
 					+ "response_type=code&"
 					+ "scope=" + "snsapi_base" + "&"
-					+ "state=" + 123 + "#wechat_redirect";
+					+ "state=" + 456 + "#wechat_redirect";
 	// 第三个一级菜单 第四个子菜单 名字
 	public final static String MENU3_CHILDREN4_NAME = "历史消息";
 	// 第三个一级菜单 第四个子编码 名字
