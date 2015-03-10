@@ -18,7 +18,7 @@
 	<form action="priorderOrder.action" method="post" id="private_form">
 	 <div class="private_div " style="" >
 		<div class="private_title">
-	 		<font class="font_orange_title">私人定制</font>
+	 		<font class="font_orange_title" style="display: none">私人定制</font>
 	 	</div>
 	 	<div class="private_content">
 	 	<input name="openid" type="hidden" value="<s:property value="openid"/>">

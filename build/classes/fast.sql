@@ -1,5 +1,5 @@
-create database if not exists 'sgt_wx';
-use 'sgt_wx';
+﻿create database if not exists sgt_wx;
+use sgt_wx;
 create table fast_user(id int primary key NOT NULL AUTO_INCREMENT,
                        user_name varchar(20),
                        user_open_id varchar(50),
@@ -24,5 +24,5 @@ create table fast_group_info(id int primary key NOT NULL AUTO_INCREMENT,
 insert into fast_group_info (name,price,discount_price,people_num,num)values('正道产品',6888.00,5888.00,258,358);
 create table fast_group_order(id int primary key NOT NULL AUTO_INCREMENT,		                         user_id varchar(50),
 		                         num int,
-		                         price double
+		                         price double,
 		                         order_date datetime);

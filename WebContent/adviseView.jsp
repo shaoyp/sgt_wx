@@ -19,7 +19,7 @@
 	<form action="insertAdvise.action" method="post" id="advise_form">
 	 <div class="advise_div " style="" >
 	 	<div class="advise_title">
-	 		<font class="font_orange_title">意见建议</font>
+	 		<font class="font_orange_title" style="display: none">意见建议</font>
 	 	</div>
 	 	<div class="advise_content">
 	 	<input name="openid" type="hidden" value="<s:property value="openid"/>">
